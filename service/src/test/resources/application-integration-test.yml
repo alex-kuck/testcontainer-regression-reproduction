@@ -1,0 +1,11 @@
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: [ ]
+      properties:
+        auto-offset-reset: earliest
+        sasl.jaas.config: <TODO>
+        sasl.mechanism: PLAIN
+        security.protocol: <TODO>
+        spring.json.use.type.headers: false
+        value.deserializer: org.springframework.kafka.support.serializer.JsonDeserializer

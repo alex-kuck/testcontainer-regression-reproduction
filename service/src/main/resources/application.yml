@@ -1,0 +1,22 @@
+server:
+  error.whitelabel.enabled: false
+  port: 8787
+  shutdown: graceful
+spring:
+  application:
+    name: testcontainer-regression
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+  kafka:
+    producer-notification:
+      bootstrap-servers: [ ]
+      properties:
+        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="admin" password="admin-secret";
+        sasl.mechanism: PLAIN
+        security.protocol: SASL_PLAINTEXT
+        value.serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+com:
+  alexkuck:
+    notification:
+      topic: notifications
