@@ -20,6 +20,11 @@ repositories {
 	mavenCentral()
 }
 
+val testContainersVersion = "1.18.3" // working
+//val testContainersVersion = "1.19.0" // not working
+//val testContainersVersion = "1.19.2" // not working
+//val testContainersVersion = "1.19.3" // working 😅
+
 dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -37,8 +42,8 @@ dependencies {
 
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
-	testImplementation("org.testcontainers:testcontainers:1.18.3")
-	testImplementation("org.testcontainers:kafka:1.18.3")
+	testImplementation("org.testcontainers:testcontainers:$testContainersVersion")
+	testImplementation("org.testcontainers:kafka:$testContainersVersion")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(module = "junit")
